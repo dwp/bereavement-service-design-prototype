@@ -7,32 +7,28 @@ const {
 
 const config = {
   name: urls.otherBenefits,
-  previous: urls.birthDate,
-  next: [
+  previous: [
     {
-      page: urls.attendanceAllowanceIneligible,
+      page: urls.partnerDetail,
       condition: {
-        field: urls.otherBenefits,
-        value: ["attendance-allowance"],
-        match: match.anyOne,
+        field: urls.partnerDetail,
+        value: ["married", "civil-partnership"],
+        match: match.value,
       },
     },
     {
-      page: urls.otherBenefitsIneligible,
+      page: urls.cohabitingSituation,
       condition: {
-        field: urls.otherBenefits,
-        value: [
-          "disability-living-allowance",
-          "personal-independence-payment",
-          "adult-disability-payment",
-        ],
-        match: match.anyOne,
+        field: urls.partnerDetail,
+        value: ["cohabiting"],
+        match: match.value,
       },
     },
     {
-      page: urls.nationality,
+      page: urls.whatIsRelationship,
     },
   ],
+  next: urls.sortOutMoneyProperty,
   validation: {
     type: validation.checkboxes,
     errors: {

@@ -1,0 +1,44 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% extends "layouts/prototypeLayout.njk" %}
+
+{% block form %}
+  {{ govukRadios({
+    idPrefix: "what-is-relationship",
+    name: "what-is-relationship",
+    fieldset: {
+      legend: {
+        text: "What is your relationship to the person who has died?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    errorMessage: data.validation['what-is-relationship'].error,
+    items: [
+      {
+        value: "partner",
+        text: "Partner",
+        checked: true if data["what-is-relationship"] and data["what-is-relationship"].includes("partner")
+      },
+      {
+        value: "child",
+        text: "Child",
+        checked: true if data["what-is-relationship"] and data["what-is-relationship"].includes("child")
+      }, 
+      {
+        value: "family-member",
+        text: "Family member",
+        checked: true if data["what-is-relationship"] and data["what-is-relationship"].includes("family-member")
+      },
+      {
+        value: "friend",
+        text: "Friend",
+        checked: true if data["what-is-relationship"] and data["what-is-relationship"].includes("friend")
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block postForm %}
+    {% include './macros/assisted-digital-details.njk' %}
+{% endblock %}

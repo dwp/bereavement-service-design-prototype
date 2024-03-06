@@ -9,7 +9,7 @@
       name: "other-benefits",
       fieldset: {
         legend: {
-          text: "Are you receiving any of these benefits?",
+          text: "Are you or your partner geting, or waiting to hear about, any of these benefits?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-7"
         }
@@ -20,29 +20,49 @@
       errorMessage: data.validation['other-benefits'].error,
       items: [
       {
-        value: "adult-disability-payment",
-        text: "Adult Disability Payment (ADP)",
-        checked: true if data["other-benefits"] and data["other-benefits"].includes("adult-disability-payment")
+        value: "universal-credit",
+        text: "Universal Credit",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("universal-credit")
       },
       {
-        value: "attendance-allowance",
-        text: "Attendance Allowance (AA)",
-        checked: true if data["other-benefits"] and data["other-benefits"].includes("attendance-allowance")
+        value: "income-support",
+        text: "Income Support",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("income-support")
       },
       {
-        value: "constant-attendance-allowance",
-        text: "Constant Attendance Allowance (CAA)",
-        checked: true if data["other-benefits"] and data["other-benefits"].includes("constant-attendance-allowance")
+        value: "income-based-jobseekers-allowance",
+        text: "Income-based Jobseeker's Allowance",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("income-based-jobseekers-allowance")
       },
       {
-        value: "disability-living-allowance",
-        text: "Disability Living Allowance (DLA)",
-        checked: true if data["other-benefits"] and data["other-benefits"].includes("disability-living-allowance")
+        value: "income-related-employment-support-allowance",
+        text: "Income-related Employment and Support Allowance",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("income-related-employment-support-allowance")
       },
       {
-        value: "personal-independence-payment",
-        text: "Personal Independence Payment (PIP)",
-        checked: true if data["other-benefits"] and data["other-benefits"].includes("personal-independence-payment")
+        value: "pension-credit",
+        text: "Pension Credit",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("pension-credit")
+      },
+      {
+        value: "working-tax-credit",
+        text: "Working Tax Credit including a disability or severe disability element",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("working-tax-credit")
+      },
+      {
+        value: "child-tax-credit",
+        text: "Child Tax Credit",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("child-tax-credit")
+      },
+      {
+        value: "housing-benefit",
+        text: "Housing benefit",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("housing-benefit")
+      },
+      {
+        value: "support-mortgage-interest",
+        text: "Support for Mortgage Interest",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("support-mortgage-interest")
       },
       {
         divider: "or"

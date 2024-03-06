@@ -9,20 +9,12 @@ const config = {
   name: urls.birthDate,
   previous: [
     {
-      page: urls.specialRulesDeclaration,
+      page: urls.residenceCountry,
     },
   ],
   next: [
     {
-      page: urls.birthDateIneligible,
-      condition: {
-        field: "birth-date-year",
-        value: 1955,
-        match: match.greaterThan,
-      },
-    },
-    {
-      page: urls.otherBenefits,
+      page: urls.whatIsRelationship,
     },
   ],
   validation: {

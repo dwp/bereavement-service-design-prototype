@@ -1,0 +1,44 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% extends "layouts/prototypeLayout.njk" %}
+
+{% block form %}
+
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Do you need to sort out money, property or personal belongings of the person who has died?</h1>
+
+  <div class="govuk-hint ">This is known as their estate.</div>
+
+  {{ govukRadios({
+    idPrefix: "sort-out-money-property",
+    name: "sort-out-money-property",
+    fieldset: {
+      legend: {
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    errorMessage: data.validation['sort-out-money-property'].error,
+    items: [
+      {
+        value: "yes",
+        text: "Yes",
+        checked: true if data["sort-out-money-property"] === "yes"
+      },
+      {
+        value: "no",
+        text: "No",
+        checked: true if data["sort-out-money-property"] === "no"
+      },
+      {
+        value: "not-sure",
+        text: "I'm not sure",
+        checked: true if data["sort-out-money-property"] === "not-sure"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block postForm %}
+    {% include './macros/assisted-digital-details.njk' %}
+{% endblock %}
+

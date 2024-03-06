@@ -6,10 +6,11 @@ const {
 } = require("../../../utils/controller");
 
 const config = {
-  name: urls.specialRulesDeclaration,
-  previous: [
+  name: urls.deathCertificate,
+  previous: urls.sortOutMoneyProperty,
+  next: [
     {
-      page: urls.bestDescribe,
+      page: urls.specialRulesDeclaration,
       condition: {
         field: urls.bestDescribe,
         value: "friend",
@@ -17,7 +18,7 @@ const config = {
       },
     },
     {
-      page: urls.bestDescribe,
+      page: urls.specialRulesDeclaration,
       condition: {
         field: urls.bestDescribe,
         value: "charity",
@@ -25,27 +26,13 @@ const config = {
       },
     },
     {
-      page: urls.whoIsApplying,
-    },
-  ],
-  next: [
-    {
       page: urls.whoIsApplyingIneligible,
-      condition: {
-        field: urls.specialRulesDeclaration,
-        value: "yes",
-        match: match.value,
-      },
-    },
-    {
-      page: urls.birthDate,
     },
   ],
   validation: {
     type: validation.radios,
     errors: {
-      required:
-        "Select yes if your doctor has said you might have less than 12 months to live",
+      required: "Select the option that best describes you",
     },
   },
 };
