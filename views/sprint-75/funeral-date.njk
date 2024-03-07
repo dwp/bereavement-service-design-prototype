@@ -1,0 +1,68 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{% extends "layouts/prototypeLayout.njk" %}
+
+{% block form %}
+
+
+{% set startDateHtml %}
+    {{ govukDateInput({
+      id: "funeral-date-reveal",
+      namePrefix: "funeral-date-reveal",
+      classes: "govuk-!-margin-bottom-2",
+      hint: {
+        text: "For example, 23 04 2021."
+      },
+      errorMessage: data.validation['funeral-date-reveal'].error,
+      items: [
+        {
+          classes: 'govuk-input--width-2',
+          name: 'day',
+          value: data['funeral-date-reveal-day']
+        },
+        {
+          classes: 'govuk-input--width-2',
+          name: 'month',
+          value: data['funeral-date-reveal-month']
+        },
+        {
+          classes: 'govuk-input--width-4',
+          name: 'year',
+          value: data['funeral-date-reveal-year']
+        }
+      ]
+    }) }}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "funeral-date",
+    name: "funeral-date",
+    fieldset: {
+      legend: {
+        text: "Has the funeral taken place?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    errorMessage: data.validation['funeral-date'].error,
+    items: [
+      {
+        value: "yes",
+        text: "Yes",
+        checked: true if data["funeral-date"] === "yes", 
+        conditional: {
+            html: startDateHtml
+          }
+      },
+      {
+        value: "no",
+        text: "No",
+        checked: true if data["funeral-date"] === "no"
+      }
+    ]
+  }) }}
+
+  
+
+{% endblock %}

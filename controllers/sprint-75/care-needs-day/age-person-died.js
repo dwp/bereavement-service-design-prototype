@@ -6,19 +6,15 @@ const {
 } = require("../../../utils/controller");
 
 const config = {
-  name: urls.birthDate,
-  previous: [
-    {
-      page: urls.residenceCountry,
-    },
-  ],
+  name: urls.agePersonDied,
+  previous: urls.aboutPersonDied,
   next: [
     {
-      page: urls.whatIsRelationship,
+      page: urls.deathDate,
     },
   ],
   validation: {
-    type: validation.dateInput,
+    type: validation.radios,
   },
 };
 

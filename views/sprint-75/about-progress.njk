@@ -1,0 +1,21 @@
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "layouts/prototypeLayout.njk" %}
+
+{% block form %}
+
+  <h1 class="govuk-heading-l">About the progress you've made</h1>
+  <p class="govuk-body">We are now going to ask you some questions about what you might have done so far.</p>
+  <p class="govuk-body">These will include:</p>
+ 
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Death certificate</li>
+    <li>Sorting out money, property or personal belongings of the person who's died</li>
+  </ul>
+
+{% endblock %}
+
+{% block postForm %}
+    {% include './macros/assisted-digital-details.njk' %}
+{% endblock %}

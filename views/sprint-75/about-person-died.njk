@@ -1,0 +1,22 @@
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "layouts/prototypeLayout.njk" %}
+
+{% block form %}
+
+  <h1 class="govuk-heading-l">About the person that died</h1>
+  <p class="govuk-body">We are now going to ask you some questions about the person who died.</p>
+  <p class="govuk-body">These will include:</p>
+ 
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Age of your partner when they died</li>
+    <li>Date of death</li>
+    <li>information about the funeral</li>
+  </ul>
+
+{% endblock %}
+
+{% block postForm %}
+    {% include './macros/assisted-digital-details.njk' %}
+{% endblock %}

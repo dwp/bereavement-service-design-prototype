@@ -6,25 +6,25 @@ const {
 } = require("../../../utils/controller");
 
 const config = {
-  name: urls.residenceCountry,
-  previous: urls.start,
+  name: urls.partnerDetail,
+  previous: urls.whatIsRelationship,
   next: [
     {
-      page: urls.residenceCountryIneligible,
+      page: urls.cohabitingSituation,
       condition: {
-        field: urls.residenceCountry,
-        value: "abroad",
+        field: urls.partnerDetail,
+        value: "cohabiting",
         match: match.value,
       },
     },
     {
-      page: urls.birthDate,
+      page: urls.otherBenefits,
     },
   ],
   validation: {
     type: validation.radios,
     errors: {
-      required: "Select the country where you live",
+      required: "Select your relationship to your partner",
     },
   },
 };

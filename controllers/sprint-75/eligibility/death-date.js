@@ -6,15 +6,23 @@ const {
 } = require("../../../utils/controller");
 
 const config = {
-  name: urls.birthDate,
+  name: urls.deathDate,
   previous: [
     {
-      page: urls.residenceCountry,
+      page: urls.agePersonDied,
     },
   ],
   next: [
     {
-      page: urls.whatIsRelationship,
+      page: urls.deathCertificate,
+      condition: {
+        field: urls.otherBenefits,
+        value: "no-other-benefit",
+        match: match.anyOne,
+      },
+    },
+    {
+      page: urls.funeralDate,
     },
   ],
   validation: {

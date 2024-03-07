@@ -6,25 +6,25 @@ const {
 } = require("../../../utils/controller");
 
 const config = {
-  name: urls.residenceCountry,
-  previous: urls.start,
+  name: urls.deathCertificate,
+  previous: urls.aboutProgress,
   next: [
     {
-      page: urls.residenceCountryIneligible,
+      page: urls.sortOutMoneyProperty,
       condition: {
-        field: urls.residenceCountry,
-        value: "abroad",
+        field: urls.partnerDetail,
+        value: "cohabiting",
         match: match.value,
       },
     },
     {
-      page: urls.birthDate,
+      page: urls.checkAnswersDetails,
     },
   ],
   validation: {
     type: validation.radios,
     errors: {
-      required: "Select the country where you live",
+      required: "Select the option that best describes you",
     },
   },
 };

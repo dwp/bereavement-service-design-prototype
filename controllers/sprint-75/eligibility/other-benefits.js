@@ -7,36 +7,33 @@ const {
 
 const config = {
   name: urls.otherBenefits,
-  previous: urls.birthDate,
-  next: [
+  previous: [
     {
-      page: urls.attendanceAllowanceIneligible,
+      page: urls.whatIsRelationship,
       condition: {
-        field: urls.otherBenefits,
-        value: ["attendance-allowance"],
-        match: match.anyOne,
+        field: urls.whatIsRelationship,
+        value: ["family-member", "child", "friend"],
+        match: match.value,
       },
     },
     {
-      page: urls.otherBenefitsIneligible,
+      page: urls.partnerDetail,
       condition: {
-        field: urls.otherBenefits,
-        value: [
-          "disability-living-allowance",
-          "personal-independence-payment",
-          "adult-disability-payment",
-        ],
-        match: match.anyOne,
+        field: urls.whatIsRelationship,
+        value: ["partner"],
+        match: match.value,
       },
     },
     {
-      page: urls.nationality,
+      page: urls.cohabitingSituation,
     },
   ],
+  next: urls.aboutPersonDied,
   validation: {
-    type: validation.checkboxes,
+    type: validation.radios,
     errors: {
-      required: "Select which benefit you get",
+      required:
+        "Select yes if you are getting or waiting to hear about any of these benefits",
     },
   },
 };

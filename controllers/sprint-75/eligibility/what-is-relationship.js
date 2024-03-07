@@ -3,28 +3,28 @@ const {
   validation,
   match,
   registerController,
-} = require('../../../utils/controller');
+} = require("../../../utils/controller");
 
 const config = {
-  name: urls.whoIsApplying,
-  previous: urls.beforeYouStart,
+  name: urls.whatIsRelationship,
+  previous: urls.birthDate,
   next: [
     {
-      page: urls.specialRulesDeclaration,
+      page: urls.partnerDetail,
       condition: {
-        field: urls.whoIsApplying,
-        value: 'myself',
+        field: urls.whatIsRelationship,
+        value: "partner",
         match: match.value,
       },
     },
     {
-      page: urls.bestDescribe,
+      page: urls.otherBenefits,
     },
   ],
   validation: {
     type: validation.radios,
     errors: {
-      required: 'Select who is applying.',
+      required: "Select your relationship.",
     },
   },
 };
