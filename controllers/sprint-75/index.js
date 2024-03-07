@@ -2,6 +2,8 @@
 const verificationCode = require("./start/verification-code");
 const start = require("./start/start");
 const aboutPersonDied = require("./start/about-person-died");
+const aboutProgress = require("./start/about-progress");
+const resultsPage = require("./start/results-page");
 const helpingSomeoneIntro = require("./start/helping-someone-intro");
 
 // eligibility
@@ -153,7 +155,9 @@ module.exports = {
   verificationCode,
   start,
   aboutPersonDied,
+  aboutProgress,
   agePersonDied,
+  resultsPage,
   helpingSomeoneIntro,
   whatIsRelationship,
   whoIsApplyingIneligible,

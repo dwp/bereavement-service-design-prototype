@@ -7,25 +7,13 @@ const {
 
 const config = {
   name: urls.deathCertificate,
-  previous: [
-    {
-      page: urls.deathDate,
-      condition: {
-        field: urls.otherBenefits,
-        value: "no-other-benefits",
-        match: match.anyOne,
-      },
-    },
-    {
-      page: urls.funeralDate,
-    },
-  ],
+  previous: urls.aboutProgress,
   next: [
     {
       page: urls.sortOutMoneyProperty,
       condition: {
         field: urls.partnerDetail,
-        value: "cohabitee",
+        value: "cohabiting",
         match: match.value,
       },
     },

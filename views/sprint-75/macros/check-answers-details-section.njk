@@ -95,16 +95,9 @@
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['other-benefits'] 
-          | replace("universal-credit", "Universal Credit")
-          | replace("income-support", "Income Support")
-          | replace("income-based-jobseekers-allowance", "Income-based Jobseeker's Allowance")
-          | replace("income-related-employment-support-allowance", "Income-related Employment and Support Allowance") 
-          | replace("pension-credit", "Pension Credit")
-          | replace("working-tax-credit", "Working Tax Credit including a disability or severe disability element")
-          | replace("child-tax-credit", "Child Tax Credit")
-          | replace("housing-benefit", "Housing benefit")
-          | replace("support-mortgage-interest", "Support for Mortgage Interest")
-          | replace("no-other-benefit", "None of these benefits")}}
+          | replace("yes", "Yes")
+          | replace("no", "No")
+          }}
         </dd>
         <dd class="govuk-summary-list__actions">
           {{ changeLink('other-benefits') }}
@@ -193,7 +186,7 @@
           {{ changeLink('death-certificate') }}
         </dd>
       </div>
-      {# {% if data['partner-detail'] == 'cohabitee' %} #}
+      {# {% if data['partner-detail'] == 'cohabiting' %} #}
         <div class="govuk-summary-list__row sort-out-money-property">
           <dt class="govuk-summary-list__key">
             Whether you need to sort out money, property or personal belongings of the person who has died

@@ -4,6 +4,8 @@ module.exports = {
     root: "/",
     start: "start",
     aboutPersonDied: "about-person-died",
+    aboutProgress: "about-progress",
+    resultsPage: "results-page",
     helpingSomeoneIntro: "helping-someone-intro",
 
     // eligibility

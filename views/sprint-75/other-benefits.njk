@@ -1,9 +1,9 @@
-{% from "govuk/components/checkboxes/macro.njk"    import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk"    import govukRadios %}
 
 {% extends "layouts/prototypeLayout.njk" %}
 
 {% block form %}
-  {{ govukCheckboxes
+  {# {{ govukCheckboxes
     ({
       idPrefix: "other-benefits",
       name: "other-benefits",
@@ -63,20 +63,38 @@
         value: "support-mortgage-interest",
         text: "Support for Mortgage Interest",
         checked: true if data["other-benefits"] and data["other-benefits"].includes("support-mortgage-interest")
-      },
-      {
-        divider: "or"
-      },
-      {
-        value: "no-other-benefit",
-        text: "None of these benefits",
-        behaviour: "exclusive",
-        checked: true if data["other-benefits"] and data["other-benefits"].includes("no-other-benefit")
-      }]
+      },]
     })
-  }}
-{% endblock %}
+  }} #}
+  <h1 class="govuk-heading-l">Are you geting, or waiting to hear about, any of these benefits?</h1>
 
-{% block postForm %}
-    {% include './macros/assisted-digital-details.njk' %}
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Universal Credit</li>
+    <li>Income Support</li>
+    <li>Income-based Jobseeker's Allowance</li>
+    <li>Income-related Employment and Support Allowance</li>
+    <li>Pension Credit</li>
+    <li>Working Tax Credit including a disability or severe disability element</li>
+    <li>Child Tax Credit</li>
+    <li>Housing benefit</li>
+    <li>Support for Mortgage Interest</li>
+  </ul>
+
+  {{ govukRadios({
+    id: "other-benefits",
+    name: "other-benefits",
+    errorMessage: data.validation['other-benefits'].error,
+    items: [
+      {
+        value: "yes",
+        text: "Yes",
+        checked: true if data["other-benefits"] === "yes"
+      },
+      {
+        value: "no",
+        text: "No",
+        checked: true if data["other-benefits"] === "no"
+      }
+    ]
+  }) }}
 {% endblock %}

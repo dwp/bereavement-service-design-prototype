@@ -7,7 +7,7 @@ const {
 const config = {
   name: urls.funeralDate,
   previous: urls.deathDate,
-  next: urls.deathCertificate,
+  next: urls.aboutProgress,
   validation: [
     {
       name: "funeral-date",

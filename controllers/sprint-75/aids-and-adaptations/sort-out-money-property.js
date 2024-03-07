@@ -1,13 +1,12 @@
 const {
   urls,
   validation,
-  match,
   registerController,
 } = require("../../../utils/controller");
 
 const config = {
   name: urls.sortOutMoneyProperty,
-  previous: urls.otherBenefits,
+  previous: urls.deathCertificate,
   next: urls.checkAnswersDetails,
   validation: [
     {
