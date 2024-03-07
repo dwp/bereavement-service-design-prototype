@@ -5,24 +5,23 @@ const {
 } = require("../../../utils/controller");
 
 const config = {
-  name: urls.difficultiesStartDate,
-  previous: urls.checkAnswersNight,
-  next: urls.checkAnswersStartDate,
+  name: urls.funeralDate,
+  previous: urls.deathDate,
+  next: urls.deathCertificate,
   validation: [
     {
-      name: "start-date",
+      name: "funeral-date",
       type: validation.radios,
       errors: {
-        required:
-          "Select yes if your difficulties started more than 6 months ago",
+        required: "Select yes if the funeral already happened",
       },
     },
     {
-      name: "difficulties-start-date",
+      name: "funeral-date-reveal",
       type: validation.dateInput,
       condition: {
-        field: "start-date",
-        value: "less-than-six-months",
+        field: "funeral-date",
+        value: "yes",
       },
     },
   ],

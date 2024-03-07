@@ -28,7 +28,7 @@ const config = {
       page: urls.whatIsRelationship,
     },
   ],
-  next: urls.sortOutMoneyProperty,
+  next: urls.aboutPersonDied,
   validation: {
     type: validation.checkboxes,
     errors: {

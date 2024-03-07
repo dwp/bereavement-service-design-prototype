@@ -1,0 +1,42 @@
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{% extends "layouts/prototypeLayout.njk" %}
+
+{% block form %}
+  {{ govukDateInput({
+    id: "death-date",
+    namePrefix: "death-date",
+    fieldset: {
+      legend: {
+        text: "When did your partner die?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    hint: {
+      text: "For example, 3 6 2024."
+    },
+    errorMessage: data.validation['death-date'].error,
+    items: [
+      {
+        classes: 'govuk-input--width-2',
+        name: 'day',
+        value: data['death-date-day']
+      },
+      {
+        classes: 'govuk-input--width-2',
+        name: 'month',
+        value: data['death-date-month']
+      },
+      {
+        classes: 'govuk-input--width-4',
+        name: 'year',
+        value: data['death-date-year']
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block postForm %}
+    {% include './macros/assisted-digital-details.njk' %}
+{% endblock %}

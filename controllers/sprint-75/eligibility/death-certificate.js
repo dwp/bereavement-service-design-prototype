@@ -7,26 +7,30 @@ const {
 
 const config = {
   name: urls.deathCertificate,
-  previous: urls.sortOutMoneyProperty,
+  previous: [
+    {
+      page: urls.deathDate,
+      condition: {
+        field: urls.otherBenefits,
+        value: "no-other-benefits",
+        match: match.anyOne,
+      },
+    },
+    {
+      page: urls.funeralDate,
+    },
+  ],
   next: [
     {
-      page: urls.specialRulesDeclaration,
+      page: urls.sortOutMoneyProperty,
       condition: {
-        field: urls.bestDescribe,
-        value: "friend",
+        field: urls.partnerDetail,
+        value: "cohabitee",
         match: match.value,
       },
     },
     {
-      page: urls.specialRulesDeclaration,
-      condition: {
-        field: urls.bestDescribe,
-        value: "charity",
-        match: match.value,
-      },
-    },
-    {
-      page: urls.whoIsApplyingIneligible,
+      page: urls.checkAnswersDetails,
     },
   ],
   validation: {

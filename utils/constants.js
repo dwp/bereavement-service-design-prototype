@@ -3,7 +3,7 @@ module.exports = {
     // start
     root: "/",
     start: "start",
-    beforeYouStart: "before-you-start",
+    aboutPersonDied: "about-person-died",
     helpingSomeoneIntro: "helping-someone-intro",
 
     // eligibility
@@ -12,6 +12,7 @@ module.exports = {
     partnerDetail: "partner-detail",
     whoIsApplyingIneligible: "who-is-applying-ineligible",
     birthDate: "birth-date",
+    deathDate: "death-date",
     birthDateIneligible: "birth-date-ineligible",
     otherBenefits: "other-benefits",
     otherBenefitsIneligible: "other-benefits-ineligible",
@@ -65,7 +66,7 @@ module.exports = {
 
     // care needs daytime
     dayDifficulties: "day-difficulties",
-    difficultiesStartDate: "difficulties-start-date",
+    funeralDate: "funeral-date",
     cohabitingSituation: "cohabiting-situation",
     bedDayWhy: "bed-day-why",
     returnBedDay: "return-bed-day",
@@ -99,7 +100,7 @@ module.exports = {
     communicationDayFrequency: "communication-day-frequency",
     communicationDayDifficulties: "communication-day-difficulties",
     keepEyeIntroduction: "keep-eye-introduction",
-    keepEyeChoice: "keep-eye-choice",
+    agePersonDied: "age-person-died",
     keepEyeWhy: "keep-eye-why",
     keepEyeDuration: "keep-eye-duration",
     safeDayNight: "safe-day-night",

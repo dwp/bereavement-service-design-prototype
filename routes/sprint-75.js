@@ -7,7 +7,7 @@ const { urls } = require("../utils/constants");
 // start
 router.use(urls.root, controllers.verificationCode);
 router.use(`/${urls.start}`, controllers.start);
-router.use(`/${urls.beforeYouStart}`, controllers.beforeYouStart);
+router.use(`/${urls.aboutPersonDied}`, controllers.aboutPersonDied);
 router.use(`/${urls.helpingSomeoneIntro}`, controllers.helpingSomeoneIntro);
 
 // eligibility
@@ -19,6 +19,7 @@ router.use(
 router.use(`/${urls.deathCertificate}`, controllers.deathCertificate);
 router.use(`/${urls.partnerDetail}`, controllers.partnerDetail);
 router.use(`/${urls.birthDate}`, controllers.birthDate);
+router.use(`/${urls.deathDate}`, controllers.deathDate);
 router.use(`/${urls.birthDateIneligible}`, controllers.birthDateIneligible);
 router.use(`/${urls.otherBenefits}`, controllers.otherBenefits);
 router.use(
@@ -111,7 +112,7 @@ router.use(`/${urls.evidence}`, controllers.evidence);
 
 // care needs daytime
 router.use(`/${urls.dayDifficulties}`, controllers.dayDifficulties);
-router.use(`/${urls.difficultiesStartDate}`, controllers.difficultiesStartDate);
+router.use(`/${urls.funeralDate}`, controllers.funeralDate);
 router.use(`/${urls.cohabitingSituation}`, controllers.cohabitingSituation);
 router.use(`/${urls.bedDayWhy}`, controllers.bedDayWhy);
 router.use(`/${urls.returnBedDay}`, controllers.returnBedDay);
@@ -159,7 +160,7 @@ router.use(
   controllers.communicationDayDifficulties
 );
 router.use(`/${urls.keepEyeIntroduction}`, controllers.keepEyeIntroduction);
-router.use(`/${urls.keepEyeChoice}`, controllers.keepEyeChoice);
+router.use(`/${urls.agePersonDied}`, controllers.agePersonDied);
 router.use(`/${urls.keepEyeWhy}`, controllers.keepEyeWhy);
 router.use(`/${urls.keepEyeDuration}`, controllers.keepEyeDuration);
 router.use(`/${urls.safeDayNight}`, controllers.safeDayNight);

@@ -1,11 +1,12 @@
 // start
 const verificationCode = require("./start/verification-code");
 const start = require("./start/start");
-const beforeYouStart = require("./start/before-you-start");
+const aboutPersonDied = require("./start/about-person-died");
 const helpingSomeoneIntro = require("./start/helping-someone-intro");
 
 // eligibility
 const birthDate = require("./eligibility/birth-date");
+const deathDate = require("./eligibility/death-date");
 const birthDateIneligible = require("./eligibility/birth-date-ineligible");
 const otherBenefits = require("./eligibility/other-benefits");
 const otherBenefitsIneligible = require("./eligibility/other-benefits-ineligible");
@@ -59,7 +60,7 @@ const evidence = require("./consent/evidence");
 
 // care needs daytime
 const dayDifficulties = require("./care-needs-day/day-difficulties");
-const difficultiesStartDate = require("./care-needs-day/difficulties-start-date");
+const funeralDate = require("./care-needs-day/funeral-date");
 const cohabitingSituation = require("./care-needs-day/cohabiting-situation");
 const bedDayWhy = require("./care-needs-day/bed-day-why");
 const returnBedDay = require("./care-needs-day/return-bed-day");
@@ -92,7 +93,7 @@ const socialActivitiesDayFrequency = require("./care-needs-day/social-activities
 const communicationDay = require("./care-needs-day/communication-day");
 const communicationDayDifficulties = require("./care-needs-day/communication-day-difficulties");
 const keepEyeIntroduction = require("./care-needs-day/keep-eye-introduction");
-const keepEyeChoice = require("./care-needs-day/keep-eye-choice");
+const agePersonDied = require("./care-needs-day/age-person-died");
 const keepEyeWhy = require("./care-needs-day/keep-eye-why");
 const keepEyeDuration = require("./care-needs-day/keep-eye-duration");
 const safeDayNight = require("./care-needs-day/safe-day-night");
@@ -151,12 +152,14 @@ const checkAnswersSpecialRules = require("./check-your-answers/check-answers-spe
 module.exports = {
   verificationCode,
   start,
-  beforeYouStart,
+  aboutPersonDied,
+  agePersonDied,
   helpingSomeoneIntro,
   whatIsRelationship,
   whoIsApplyingIneligible,
   deathCertificate,
   birthDate,
+  deathDate,
   birthDateIneligible,
   otherBenefits,
   otherBenefitsIneligible,
@@ -221,7 +224,7 @@ module.exports = {
   medicationTreatmentNight,
   medicationTreatmentNightWhy,
   medicationTreatmentNightFrequency,
-  difficultiesStartDate,
+  funeralDate,
   movingIndoorsDay,
   movingIndoorsWhy,
   movingIndoorsStairs,
@@ -255,7 +258,6 @@ module.exports = {
   safeNightFrequency,
   safeNightLength,
   keepEyeIntroduction,
-  keepEyeChoice,
   keepEyeWhy,
   keepEyeDuration,
   sortOutMoneyProperty,

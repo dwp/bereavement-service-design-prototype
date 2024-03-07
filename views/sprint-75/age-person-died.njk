@@ -1,0 +1,32 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% extends "layouts/prototypeLayout.njk" %}
+
+{% block form %}
+
+
+  {{ govukRadios({
+    idPrefix: "age-person-died",
+    name: "age-person-died",
+    fieldset: {
+      legend: {
+        text: "How old was your partner when they died?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    errorMessage: data.validation['age-person-died'].error,
+    items: [
+      {
+        value: "twenty-or-over",
+        text: "20 or over",
+        checked: true if data["age-person-died"] === "twenty-or-over"
+      },
+      {
+        value: "under-twenty",
+        text: "Under 20",
+        checked: true if data["age-person-died"] === "under-twenty"
+      }
+    ]
+  }) }}
+{% endblock %}

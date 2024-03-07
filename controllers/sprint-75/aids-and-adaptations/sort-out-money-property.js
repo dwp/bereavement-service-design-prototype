@@ -8,7 +8,7 @@ const {
 const config = {
   name: urls.sortOutMoneyProperty,
   previous: urls.otherBenefits,
-  next: urls.deathCertificate,
+  next: urls.checkAnswersDetails,
   validation: [
     {
       name: "sort-out-money-property",
