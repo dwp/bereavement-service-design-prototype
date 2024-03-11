@@ -1,6 +1,7 @@
 // start
 const verificationCode = require("./start/verification-code");
 const start = require("./start/start");
+const aboutYou = require("./start/about-you");
 const aboutPersonDied = require("./start/about-person-died");
 const aboutProgress = require("./start/about-progress");
 const resultsPage = require("./start/results-page");
@@ -155,6 +156,7 @@ const checkAnswersSpecialRules = require("./check-your-answers/check-answers-spe
 module.exports = {
   verificationCode,
   start,
+  aboutYou,
   aboutPersonDied,
   aboutProgress,
   agePersonDied,

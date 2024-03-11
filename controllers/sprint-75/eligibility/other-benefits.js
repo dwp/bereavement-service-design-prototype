@@ -9,23 +9,23 @@ const config = {
   name: urls.otherBenefits,
   previous: [
     {
-      page: urls.whatIsRelationship,
-      condition: {
-        field: urls.whatIsRelationship,
-        value: ["family-member", "child", "parent", "friend"],
-        match: match.value,
-      },
-    },
-    {
       page: urls.partnerDetail,
       condition: {
         field: urls.whatIsRelationship,
-        value: ["partner"],
+        value: "partner",
         match: match.value,
       },
     },
     {
       page: urls.cohabitingSituation,
+      condition: {
+        field: urls.partnerDetail,
+        value: "living-together",
+        match: match.value,
+      },
+    },
+    {
+      page: urls.whatIsRelationship,
     },
   ],
   next: urls.aboutPersonDied,

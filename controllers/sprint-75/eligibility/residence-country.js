@@ -7,7 +7,7 @@ const {
 
 const config = {
   name: urls.residenceCountry,
-  previous: urls.start,
+  previous: urls.aboutYou,
   next: [
     {
       page: urls.residenceCountryIneligible,

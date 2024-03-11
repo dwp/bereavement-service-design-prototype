@@ -1,15 +1,15 @@
 
 {% from "./change-link.njk" import changeLink %}
-{% from "govuk/components/summary-card/macro.njk" import summaryCard %}
+{# {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %} #}
 
 {% extends "layouts/prototypeLayout.njk" %}
 
 {% block form %}
 
   <h1 class="govuk-heading-l">Information based on your answers</h1>
-  <p class="govuk-body">We are now going to ask you some questions about the person who died.</p>
   
-  <div class="govuk-summary-card">
+  
+  {# <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">
       Lead tenant
@@ -52,7 +52,17 @@
       </div>
     </dl>
   </div>
-</div>
+</div> #}
+
+ <h1 class="govuk-heading-l">About your partner</h1>
+  <p class="govuk-body">We are now going to ask you some questions about your partner.</p>
+  <p class="govuk-body">These will include:</p>
+ 
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Age of your partner when they died</li>
+    <li>Date of death</li>
+    <li>Information about the funeral</li>
+  </ul>
 
 {% endblock %}
 

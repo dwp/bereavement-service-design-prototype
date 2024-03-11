@@ -3,6 +3,7 @@ module.exports = {
     // start
     root: "/",
     start: "start",
+    aboutYou: "about-you",
     aboutPersonDied: "about-person-died",
     aboutProgress: "about-progress",
     resultsPage: "results-page",
