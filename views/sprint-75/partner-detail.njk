@@ -32,9 +32,9 @@
         checked: true if data["partner-detail"] === "civil-partnership"
       },
       {
-        value: "cohabiting",
-        text: "Co-habiting",
-        checked: true if data["partner-detail"] === "cohabiting"
+        value: "living-together",
+        text: "Living together",
+        checked: true if data["partner-detail"] === "living-together"
       },
       {
         divider: "or"
@@ -49,6 +49,3 @@
   }) }}
 {% endblock %}
 
-{% block postForm %}
-    {% include './macros/assisted-digital-details.njk' %}
-{% endblock %}

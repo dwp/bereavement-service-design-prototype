@@ -9,6 +9,7 @@ const helpingSomeoneIntro = require("./start/helping-someone-intro");
 // eligibility
 const birthDate = require("./eligibility/birth-date");
 const deathDate = require("./eligibility/death-date");
+const deathRegistered = require("./eligibility/death-registered");
 const birthDateIneligible = require("./eligibility/birth-date-ineligible");
 const otherBenefits = require("./eligibility/other-benefits");
 const otherBenefitsIneligible = require("./eligibility/other-benefits-ineligible");
@@ -158,6 +159,7 @@ module.exports = {
   aboutProgress,
   agePersonDied,
   resultsPage,
+  deathRegistered,
   helpingSomeoneIntro,
   whatIsRelationship,
   whoIsApplyingIneligible,

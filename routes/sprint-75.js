@@ -9,6 +9,7 @@ router.use(urls.root, controllers.verificationCode);
 router.use(`/${urls.start}`, controllers.start);
 router.use(`/${urls.aboutPersonDied}`, controllers.aboutPersonDied);
 router.use(`/${urls.aboutProgress}`, controllers.aboutProgress);
+router.use(`/${urls.deathRegistered}`, controllers.deathRegistered);
 router.use(`/${urls.resultsPage}`, controllers.resultsPage);
 router.use(`/${urls.helpingSomeoneIntro}`, controllers.helpingSomeoneIntro);
 

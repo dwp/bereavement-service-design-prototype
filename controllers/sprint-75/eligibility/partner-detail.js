@@ -13,7 +13,7 @@ const config = {
       page: urls.cohabitingSituation,
       condition: {
         field: urls.partnerDetail,
-        value: "cohabiting",
+        value: "living-together",
         match: match.value,
       },
     },

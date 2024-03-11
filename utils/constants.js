@@ -10,6 +10,7 @@ module.exports = {
 
     // eligibility
     whatIsRelationship: "what-is-relationship",
+    deathRegistered: "death-registered",
     deathCertificate: "death-certificate",
     partnerDetail: "partner-detail",
     whoIsApplyingIneligible: "who-is-applying-ineligible",

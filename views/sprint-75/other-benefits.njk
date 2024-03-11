@@ -1,4 +1,4 @@
-{% from "govuk/components/radios/macro.njk"    import govukRadios %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% extends "layouts/prototypeLayout.njk" %}
 
@@ -66,20 +66,19 @@
       },]
     })
   }} #}
-  <h1 class="govuk-heading-l">Are you geting, or waiting to hear about, any of these benefits?</h1>
+  <h1 class="govuk-heading-l">Are you getting, or waiting to hear about, any of these benefits?</h1>
 
-  <ul class="govuk-list govuk-list--bullet">
-    <li>Universal Credit</li>
-    <li>Income Support</li>
-    <li>Income-based Jobseeker's Allowance</li>
-    <li>Income-related Employment and Support Allowance</li>
-    <li>Pension Credit</li>
-    <li>Working Tax Credit including a disability or severe disability element</li>
+    <ul class="govuk-list govuk-list--bullet">
     <li>Child Tax Credit</li>
-    <li>Housing benefit</li>
+    <li>Housing Benefit</li>
+    <li>Income-related Employment and Support Allowance</li>
+    <li>Income-based Jobseeker's Allowance</li>
+    <li>Income Support</li>
+    <li>Pension Credit</li>
     <li>Support for Mortgage Interest</li>
+    <li>Universal Credit</li>
+    <li>Working Tax Credit including a disability or severe disability element</li>
   </ul>
-
   {{ govukRadios({
     id: "other-benefits",
     name: "other-benefits",

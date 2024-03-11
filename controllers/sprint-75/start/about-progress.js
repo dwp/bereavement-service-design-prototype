@@ -4,7 +4,7 @@ const beforeYouStart = require("./about-person-died");
 const config = {
   name: urls.aboutProgress,
   previous: urls.funeralDate,
-  next: urls.deathCertificate,
+  next: urls.deathRegistered,
 };
 
 module.exports = registerController(config.name, config);

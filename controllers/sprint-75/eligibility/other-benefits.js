@@ -12,7 +12,7 @@ const config = {
       page: urls.whatIsRelationship,
       condition: {
         field: urls.whatIsRelationship,
-        value: ["family-member", "child", "friend"],
+        value: ["family-member", "child", "parent", "friend"],
         match: match.value,
       },
     },

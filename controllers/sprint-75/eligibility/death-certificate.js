@@ -8,19 +8,20 @@ const {
 const config = {
   name: urls.deathCertificate,
   previous: urls.aboutProgress,
-  next: [
-    {
-      page: urls.sortOutMoneyProperty,
-      condition: {
-        field: urls.partnerDetail,
-        value: "cohabiting",
-        match: match.value,
-      },
-    },
-    {
-      page: urls.checkAnswersDetails,
-    },
-  ],
+  next: urls.sortOutMoneyProperty,
+  // [
+  //   {page:
+
+  //     condition: {
+  //       field: urls.partnerDetail,
+  //       value: "cohabiting",
+  //       match: match.value,
+  //     },
+  //   },
+  //   {
+  //     page: urls.checkAnswersDetails,
+  //   },
+  // ],
   validation: {
     type: validation.radios,
     errors: {
