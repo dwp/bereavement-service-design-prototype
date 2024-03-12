@@ -171,6 +171,21 @@
       What you need to do
     </h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+       <div class="govuk-summary-list__row death-registered">
+        <dt class="govuk-summary-list__key">
+          Whether the death has been registered
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['death-registered'] 
+          | replace("yes", "Yes") 
+          | replace("no", "No")
+          | replace("not-sure", "I am not sure") }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {{ changeLink('death-registered') }}
+        </dd>
+      </div>
+      {% if data['death-registered'] == 'yes' %}
       <div class="govuk-summary-list__row death-certificate">
         <dt class="govuk-summary-list__key">
           The death certificate type you have
@@ -202,6 +217,6 @@
           {{ changeLink('sort-out-money-property') }}
         </dd>
         </div>
-      {# {% endif %}  #}
+      {% endif %}
   </section>
 {% endmacro %}

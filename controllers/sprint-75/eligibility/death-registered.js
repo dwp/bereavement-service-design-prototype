@@ -7,7 +7,7 @@ const {
 
 const config = {
   name: urls.deathRegistered,
-  previous: urls.aboutPersonDied,
+  previous: urls.aboutProgress,
   next: [
     {
       page: urls.deathCertificate,
