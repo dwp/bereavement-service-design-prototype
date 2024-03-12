@@ -43,6 +43,7 @@ app.use(sessionMiddleware());
 app.use(autoStoreDataMiddleware);
 
 // [Journey routes] (do not edit this comment, it is used in automation)
+app.use('/living-together/', setVersionMiddleware('/living-together/'), require('./routes/living-together'));
 app.use('/sprint-75/', setVersionMiddleware('/sprint-75/'), require('./routes/sprint-75'));
 
 

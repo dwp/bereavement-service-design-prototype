@@ -1,0 +1,222 @@
+{% from "./change-link.njk" import changeLink %}
+{% from "./reword-date.njk" import rewordDate %}
+{% from "./reword-benefit.njk" import rewordBenefit %}
+
+{% macro checkAnswersDetailsSection(data) %}
+  <section class="Your details">
+    <h2 class="govuk-heading-m">
+      About you
+    </h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      {# {% if data['middle-name'] %}
+        <div class="govuk-summary-list__row middle-name">
+          <dt class="govuk-summary-list__key">
+            Middle name
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{ data['middle-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            {{ changeLink('full-name') }}
+          </dd>
+        </div>
+      {% endif %}   #}
+      <div class="govuk-summary-list__row residence-country">
+        <dt class="govuk-summary-list__key">
+          Where you live
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['residence-country'] 
+          | replace("england", "England")
+          | replace("scotland", "Scotland")
+          | replace("wales", "Wales")
+          | replace("northern-ireland", "Northern Ireland")
+          | replace("abroad", "Outside the UK") }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {{ changeLink('residence-country') }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row birth-date">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ rewordDate(data['birth-date-day'], data['birth-date-month'], data['birth-date-year']) }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {{ changeLink('birth-date') }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row what-is-relationship">
+        <dt class="govuk-summary-list__key">
+          Your relationship to the person who has died
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['what-is-relationship'] 
+          | replace("partner", "Partner")
+          | replace("parent", "Parent")
+          | replace("child", "Child")
+          | replace("family-member", "Family member")
+          | replace("friend", "Friend") }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {{ changeLink('what-is-relationship') }}
+        </dd>
+      </div>
+      {% if data['what-is-relationship'] == 'partner' %}
+        <div class="govuk-summary-list__row partner-detail">
+          <dt class="govuk-summary-list__key">
+            When your partner died, you were:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['partner-detail'] | replace("married", "Married") | replace("civil-partnership", "In a civil partnership")| replace("living-together", "Living together") }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            {{ changeLink('partner-detail') }}
+          </dd>
+        </div>
+      {% endif %}
+      {% if data['partner-detail'] == 'cohabiting' %}
+        <div class="govuk-summary-list__row cohabiting-situation">
+          <dt class="govuk-summary-list__key">
+            When you lived with your partner, you were:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['cohabiting-situation'] | replace("child-under-sixteen", "I was responsible for a child under 16 years old") | replace("child-between-sixteen-nineteen", "I was responsible for a child aged 16 to 19 in full-time education or training") | replace("pregnant", "I was pregnant")| replace("none", "None of these apply")| capitalize }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            {{ changeLink('cohabiting-situation') }}
+          </dd>
+        </div>
+      {% endif %}
+    <div class="govuk-summary-list__row other-benefits">
+        <dt class="govuk-summary-list__key">
+        Whether you or your partner are getting, or waiting to hear about, any benefits
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['other-benefits'] 
+          | replace("yes", "Yes")
+          | replace("no", "No")
+          }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {{ changeLink('other-benefits') }}
+        </dd>
+      </div>
+  </section>
+
+  <section class="Your health information">
+    <h2 class="govuk-heading-m">
+      About the person that died
+    </h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row age-person-died">
+        <dt class="govuk-summary-list__key">
+          Your partner's age when they died
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['age-person-died'] 
+          | replace("twenty-or-over", "20 or over") 
+          | replace("under-twenty", "Under 20") }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {{ changeLink('age-person-died') }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row death-date">
+        <dt class="govuk-summary-list__key">
+          When your partner died
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ rewordDate(data['death-date-day'], data['death-date-month'], data['death-date-year']) }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {{ changeLink('death-date') }}
+        </dd>
+      </div>
+      {% if data['funeral-date'] %}
+        <div class="govuk-summary-list__row funeral-date">
+          <dt class="govuk-summary-list__key">
+            Has the funeral taken place?
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{ data['funeral-date'] 
+          | replace("yes", "Yes") 
+          | replace("no", "No") }}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+            {{ changeLink('funeral-date') }}
+          </dd>
+        </div>
+      {% endif %}
+      {% if data['funeral-date'] == 'yes' %}
+        <div class="govuk-summary-list__row funeral-date-reveal">
+          <dt class="govuk-summary-list__key">
+            Date of the funeral
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{ rewordDate(data['funeral-date-reveal-day'], data['funeral-date-reveal-month'], data['funeral-date-reveal-year']) }}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+            {{ changeLink('funeral-date') }}
+          </dd>
+        </div>
+      {% endif %}
+    </dl>
+  </section>
+
+  <section class="progress">
+    <h2 class="govuk-heading-m">
+      What you need to do
+    </h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+       <div class="govuk-summary-list__row death-registered">
+        <dt class="govuk-summary-list__key">
+          Whether the death has been registered
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['death-registered'] 
+          | replace("yes", "Yes") 
+          | replace("no", "No")
+          | replace("not-sure", "I am not sure") }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {{ changeLink('death-registered') }}
+        </dd>
+      </div>
+      {% if data['death-registered'] == 'yes' %}
+      <div class="govuk-summary-list__row death-certificate">
+        <dt class="govuk-summary-list__key">
+          The death certificate type you have
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['death-certificate'] 
+          | replace("have-death-certificate", "I have a death certificate") 
+          | replace("interim-death-certificate", "I have an interim death certificate")
+          | replace("different-type", "I have a different type of certificate") 
+          | replace("no-death-certificate", "I do not have a certificate")
+          | replace("not-sure", "I am not sure") }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {{ changeLink('death-certificate') }}
+        </dd>
+      </div>
+      {# {% if data['partner-detail'] == 'cohabiting' %} #}
+        <div class="govuk-summary-list__row sort-out-money-property">
+          <dt class="govuk-summary-list__key">
+            Whether you need to sort out money, property or personal belongings of the person who has died
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{ data['sort-out-money-property'] 
+          | replace("yes", "Yes") 
+          | replace("no", "No")
+          | replace("yes", "I am not sure") }}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+          {{ changeLink('sort-out-money-property') }}
+        </dd>
+        </div>
+      {% endif %}
+  </section>
+{% endmacro %}
