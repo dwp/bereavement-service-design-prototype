@@ -1,0 +1,99 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% extends "layouts/prototypeLayout.njk" %}
+
+{% block form %}
+  {# {{ govukCheckboxes
+    ({
+      idPrefix: "other-benefits",
+      name: "other-benefits",
+      fieldset: {
+        legend: {
+          text: "Are you or your partner geting, or waiting to hear about, any of these benefits?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-7"
+        }
+      },
+      hint: {
+        text: "Select all that apply."
+      },
+      errorMessage: data.validation['other-benefits'].error,
+      items: [
+      {
+        value: "universal-credit",
+        text: "Universal Credit",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("universal-credit")
+      },
+      {
+        value: "income-support",
+        text: "Income Support",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("income-support")
+      },
+      {
+        value: "income-based-jobseekers-allowance",
+        text: "Income-based Jobseeker's Allowance",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("income-based-jobseekers-allowance")
+      },
+      {
+        value: "income-related-employment-support-allowance",
+        text: "Income-related Employment and Support Allowance",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("income-related-employment-support-allowance")
+      },
+      {
+        value: "pension-credit",
+        text: "Pension Credit",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("pension-credit")
+      },
+      {
+        value: "working-tax-credit",
+        text: "Working Tax Credit including a disability or severe disability element",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("working-tax-credit")
+      },
+      {
+        value: "child-tax-credit",
+        text: "Child Tax Credit",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("child-tax-credit")
+      },
+      {
+        value: "housing-benefit",
+        text: "Housing benefit",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("housing-benefit")
+      },
+      {
+        value: "support-mortgage-interest",
+        text: "Support for Mortgage Interest",
+        checked: true if data["other-benefits"] and data["other-benefits"].includes("support-mortgage-interest")
+      },]
+    })
+  }} #}
+  <h1 class="govuk-heading-l">Are you getting, or waiting to hear about, any of these benefits?</h1>
+
+    <ul class="govuk-list govuk-list--bullet">
+    <li>Child Tax Credit</li>
+    <li>Housing Benefit</li>
+    <li>Income-related Employment and Support Allowance</li>
+    <li>Income-based Jobseeker's Allowance</li>
+    <li>Income Support</li>
+    <li>Pension Credit</li>
+    <li>Support for Mortgage Interest</li>
+    <li>Universal Credit</li>
+    <li>Working Tax Credit including a disability or severe disability element</li>
+  </ul>
+  {{ govukRadios({
+    id: "other-benefits",
+    name: "other-benefits",
+    errorMessage: data.validation['other-benefits'].error,
+    items: [
+      {
+        value: "yes",
+        text: "Yes",
+        checked: true if data["other-benefits"] === "yes"
+      },
+      {
+        value: "no",
+        text: "No",
+        checked: true if data["other-benefits"] === "no"
+      }
+    ]
+  }) }}
+{% endblock %}

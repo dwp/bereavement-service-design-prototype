@@ -1,0 +1,21 @@
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "layouts/prototypeLayout.njk" %}
+
+{% block form %}
+
+  <h1 class="govuk-heading-l">About you</h1>
+  <p class="govuk-body">We will ask:</p>
+ 
+  <ul class="govuk-list govuk-list--bullet">
+    <li>which country you live in</li>
+    <li>your date of birth</li>
+    <li>your relationship to the person who died</li>
+    <li>about any children you have or if you were pregnant when your partner died</li>
+    <li>about any benefits you get</li>
+
+  </ul>
+
+{% endblock %}
+

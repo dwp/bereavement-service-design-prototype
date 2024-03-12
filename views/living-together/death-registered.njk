@@ -1,0 +1,41 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% extends "layouts/prototypeLayout.njk" %}
+
+{% block form %}
+
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Has the death been registered?</h1>
+
+
+  {{ govukRadios({
+    idPrefix: "death-registered",
+    name: "death-registered",
+    fieldset: {
+      legend: {
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    errorMessage: data.validation['death-registered'].error,
+    items: [
+      {
+        value: "yes",
+        text: "Yes",
+        checked: true if data["death-registered"] === "yes"
+      },
+      {
+        value: "no",
+        text: "No",
+        checked: true if data["death-registered"] === "no"
+      },
+      {
+        value: "not-sure",
+        text: "I'm not sure",
+        checked: true if data["death-registered"] === "not-sure"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+

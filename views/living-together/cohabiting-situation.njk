@@ -1,0 +1,45 @@
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{% extends "layouts/prototypeLayout.njk" %}
+
+{% block form %}
+   <h1 class="govuk-heading-l">
+    When your partner died, did any of these applied to you?
+   </h1>
+  {{ govukCheckboxes
+    ({
+      idPrefix: "cohabiting-situation",
+      name: "cohabiting-situation",
+      hint: {
+        text: 'Select all that apply.'
+      },
+      errorMessage: data.validation['cohabiting-situation'].error,
+      items: [{
+        value: "child-under-sixteen",
+        text: "I was responsible for a child under 16 years old",
+        checked: true if data["cohabiting-situation"] and data["cohabiting-situation"].includes("child-under-sixteen")
+      },
+      {
+        value: "child-between-sixteen-nineteen",
+        text: "I was responsible for a child aged 16 to 19 in full-time education or training",
+        checked: true if data["cohabiting-situation"] and data["cohabiting-situation"].includes("child-between-sixteen-nineteen")
+      },
+      {
+        value: "pregnant",
+        text: "I was pregnant",
+        checked: true if data["cohabiting-situation"] and data["cohabiting-situation"].includes("pregnant")
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "none",
+        text: "None of these apply",
+        behaviour: "exclusive",
+        checked: true if data["cohabiting-situation"] and data["cohabiting-situation"].includes("none")
+      }]
+    })
+  }}
+{% endblock %}
+
