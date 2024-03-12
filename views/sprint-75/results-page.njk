@@ -1,6 +1,6 @@
 
-{% from "./change-link.njk" import changeLink %}
-{# {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %} #}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
 
 {% extends "layouts/prototypeLayout.njk" %}
 
@@ -54,15 +54,44 @@
   </div>
 </div> #}
 
- <h1 class="govuk-heading-l">About your partner</h1>
-  <p class="govuk-body">We are now going to ask you some questions about your partner.</p>
-  <p class="govuk-body">These will include:</p>
+<p class="govuk-body">We are now going to ask you some questions about your partner.</p>
+<p class="govuk-body">These will include:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>Age of your partner when they died</li>
+  <li>Date of death</li>
+  <li>Information about the funeral</li>
+</ul>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
  
-  <ul class="govuk-list govuk-list--bullet">
-    <li>Age of your partner when they died</li>
-    <li>Date of death</li>
-    <li>Information about the funeral</li>
-  </ul>
+<p class="govuk-body">We are now going to ask you some questions about your partner.</p>
+<p class="govuk-body">These will include:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>Age of your partner when they died</li>
+  <li>Date of death</li>
+  <li>Information about the funeral</li>
+</ul>
+
+<div class="govuk-cookie-banner" data-nosnippet role="region" aria-label="Cookies on [name of service]">
+  <div class="govuk-cookie-banner__message govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-cookie-banner__heading govuk-heading-m govuk-!-padding-left-8">
+         Coping with a death
+        </h2>
+        <div class="govuk-cookie-banner__content govuk-!-padding-left-8">
+          <p class="govuk-body">You can find information about understanding and managing grief from the following organisations: </p>
+          <p class="govuk-body"><a class="govuk-link govuk-link" href="https://www.gov.uk/government/publications/attendance-allowance-claim-form">NHS advice</a> on dealing with bereavement, grief and loss.</p>
+          <p class="govuk-body"><a class="govuk-link govuk-link" href="https://www.gov.uk/government/publications/attendance-allowance-claim-form">Cruse Bereavement Support</a> to learn more about the grieving process.</p>
+          <p class="govuk-body"><a class="govuk-link govuk-link" href="https://www.gov.uk/government/publications/attendance-allowance-claim-form">National Bereavement Service</a>  for ways to manage grief.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
 
