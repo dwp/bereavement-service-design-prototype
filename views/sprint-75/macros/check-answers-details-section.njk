@@ -55,6 +55,7 @@
         <dd class="govuk-summary-list__value">
           {{ data['what-is-relationship'] 
           | replace("partner", "Partner")
+          | replace("parent", "Parent")
           | replace("child", "Child")
           | replace("family-member", "Family member")
           | replace("friend", "Friend") }}
@@ -69,7 +70,7 @@
             When your partner died, you were:
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['partner-detail'] | replace("married", "Married") | replace("civil-partnership", "In a civil partnership")| replace("cohabiting", "Co-habiting") }}
+            {{ data['partner-detail'] | replace("married", "Married") | replace("civil-partnership", "In a civil partnership")| replace("living-together", "Living together") }}
           </dd>
           <dd class="govuk-summary-list__actions">
             {{ changeLink('partner-detail') }}
@@ -167,7 +168,7 @@
 
   <section class="progress">
     <h2 class="govuk-heading-m">
-      What you have so far
+      What you need to do
     </h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row death-certificate">
@@ -192,7 +193,7 @@
             Whether you need to sort out money, property or personal belongings of the person who has died
           </dt>
           <dd class="govuk-summary-list__value">
-          {{ data['consent'] 
+          {{ data['sort-out-money-property'] 
           | replace("yes", "Yes") 
           | replace("no", "No")
           | replace("yes", "I am not sure") }}
@@ -201,6 +202,6 @@
           {{ changeLink('sort-out-money-property') }}
         </dd>
         </div>
-      {# {% endif %} #}
+      {# {% endif %}  #}
   </section>
 {% endmacro %}

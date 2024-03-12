@@ -1,6 +1,7 @@
 // start
 const verificationCode = require("./start/verification-code");
 const start = require("./start/start");
+const aboutYou = require("./start/about-you");
 const aboutPersonDied = require("./start/about-person-died");
 const aboutProgress = require("./start/about-progress");
 const resultsPage = require("./start/results-page");
@@ -9,6 +10,7 @@ const helpingSomeoneIntro = require("./start/helping-someone-intro");
 // eligibility
 const birthDate = require("./eligibility/birth-date");
 const deathDate = require("./eligibility/death-date");
+const deathRegistered = require("./eligibility/death-registered");
 const birthDateIneligible = require("./eligibility/birth-date-ineligible");
 const otherBenefits = require("./eligibility/other-benefits");
 const otherBenefitsIneligible = require("./eligibility/other-benefits-ineligible");
@@ -154,10 +156,12 @@ const checkAnswersSpecialRules = require("./check-your-answers/check-answers-spe
 module.exports = {
   verificationCode,
   start,
+  aboutYou,
   aboutPersonDied,
   aboutProgress,
   agePersonDied,
   resultsPage,
+  deathRegistered,
   helpingSomeoneIntro,
   whatIsRelationship,
   whoIsApplyingIneligible,

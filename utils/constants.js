@@ -3,6 +3,7 @@ module.exports = {
     // start
     root: "/",
     start: "start",
+    aboutYou: "about-you",
     aboutPersonDied: "about-person-died",
     aboutProgress: "about-progress",
     resultsPage: "results-page",
@@ -10,6 +11,7 @@ module.exports = {
 
     // eligibility
     whatIsRelationship: "what-is-relationship",
+    deathRegistered: "death-registered",
     deathCertificate: "death-certificate",
     partnerDetail: "partner-detail",
     whoIsApplyingIneligible: "who-is-applying-ineligible",
