@@ -7,14 +7,12 @@ module.exports = {
     aboutPersonDied: "about-person-died",
     aboutProgress: "about-progress",
     resultsPage: "results-page",
-    helpingSomeoneIntro: "helping-someone-intro",
 
     // eligibility
     whatIsRelationship: "what-is-relationship",
     deathRegistered: "death-registered",
     deathCertificate: "death-certificate",
     partnerDetail: "partner-detail",
-    whoIsApplyingIneligible: "who-is-applying-ineligible",
     birthDate: "birth-date",
     deathDate: "death-date",
     birthDateIneligible: "birth-date-ineligible",
@@ -24,9 +22,6 @@ module.exports = {
     nationalityOther: "nationality-other",
     residenceCountry: "residence-country",
     residenceCountryIneligible: "residence-country-ineligible",
-    countryOutsideUKDuration: "country-outside-uk-duration",
-    countryOutsideUKDurationInelgible: "country-outside-uk-duration-ineligible",
-    attendanceAllowanceIneligible: "attendance-allowance-ineligible",
 
     // identity
     nationalInsurance: "national-insurance",
@@ -36,10 +31,6 @@ module.exports = {
     homeAddressManual: "home-address-manual",
     homeAddressInternational: "home-address-international",
 
-    // payability
-    careHomeHospital: "care-home-hospital",
-    sercoCareHomeHospital: "serco-care-home-hospital",
-
     // illness and disabilities
     illnessDisability: "illness-disability",
     illnessDisabilityAdded: "illness-disability-added",
@@ -48,96 +39,13 @@ module.exports = {
     illnessDisabilityDate: "illness-disability-date",
     illnessDisabilityDateManual: "illness-disability-date-manual",
 
-    // special rules
-    specialRulesDeclaration: "special-rules-declaration",
-    specialRulesForm: "special-rules-form",
-
-    // renal dyalisis
-    renalDialysis: "renal-dialysis",
-    renalDialysisWhere: "renal-dialysis-where",
-    renalDialysisWhen: "renal-dialysis-when",
-    renalDialysisFrequency: "renal-dialysis-frequency",
-    renalDialysisHelp: "renal-dialysis-help",
-
-    // surgery or treatment
-    treatmentSurgery: "treatment-surgery",
-    treatmentSurgeryInformation: "treatment-surgery-information",
-
-    // consent
-    consent: "consent",
-    surgeryMedicalCentre: "surgery-medical-centre",
-    evidence: "evidence",
-
     // care needs daytime
-    dayDifficulties: "day-difficulties",
     funeralDate: "funeral-date",
     cohabitingSituation: "cohabiting-situation",
-    bedDayWhy: "bed-day-why",
-    returnBedDay: "return-bed-day",
-    washDay: "wash-day",
-    washDayWhy: "wash-day-why",
-    additinalWashDay: "additional-wash-day",
-    dressDay: "dress-day",
-    dressDayWhy: "dress-day-why",
-    additionalDressDay: "additional-dress-day",
-    movingIndoorsDay: "moving-indoors-day",
-    movingIndoorsWhy: "moving-indoors-why",
-    movingIndoorsStairs: "moving-indoors-stairs",
-    fallingOrStumbling: "falling-or-stumbling",
-    fallingOrStumblingWhy: "falling-or-stumbling-why",
-    stumbling: "stumbling",
-    fallingWhen: "falling-when",
-    falling: "falling",
-    fallingHelp: "falling-help",
-    toiletDay: "toilet-day",
-    toiletDayWhy: "toilet-day-why",
-    toiletDayFrequency: "toilet-day-frequency",
-    eatDrinkDay: "eat-drink-day",
-    eatDrinkDayWhy: "eat-drink-day-why",
-    eatDrinkDayFrequency: "eat-drink-day-frequency",
-    medicationTreatmentDay: "medication-treatment-day",
-    medicationTreatmentDayWhy: "medication-treatment-day-why",
-    medicationTreatmentDayFrequency: "medication-treatment-day-frequency",
-    socialActivitiesDay: "social-activities-day",
-    socialActivitiesDayFrequency: "social-activities-day-frequency",
-    communicationDay: "communication-day",
-    communicationDayFrequency: "communication-day-frequency",
-    communicationDayDifficulties: "communication-day-difficulties",
-    keepEyeIntroduction: "keep-eye-introduction",
     agePersonDied: "age-person-died",
-    keepEyeWhy: "keep-eye-why",
-    keepEyeDuration: "keep-eye-duration",
-    safeDayNight: "safe-day-night",
-    safeDayWhy: "safe-day-why",
-    safeDayLength: "safe-day-length",
-
-    // night time care needs
-    turningOverNightFrequency: "turning-over-night-frequency",
-    nightDifficulties: "night-difficulties",
-    bedPositionNight: "bed-position-night",
-    bedPositionNightFrequency: "bed-position-night-frequency",
-    toiletNight: "toilet-night",
-    toiletNightWhy: "toilet-night-why",
-    toiletNightFrequency: "toilet-night-frequency",
-    cleaningSoiledNight: "cleaning-soiled-night",
-    cleaningSoiledNightFrequency: "cleaning-soiled-night-frequency",
-    medicationTreatmentNight: "medication-treatment-night",
-    medicationTreatmentNightWhy: "medication-treatment-night-why",
-    medicationTreatmentNightFrequency: "medication-treatment-night-frequency",
-    watchOverYouIntro: "watch-over-you-intro",
-    watchOverNight: "watch-over-night",
-    watchOverNightWhy: "watch-over-night-why",
-    watchOverNightFrequency: "watch-over-night-frequency",
-    safeNightFrequency: "safe-night-frequency",
-    safeNightLength: "safe-night-length",
 
     // aids adptations
     sortOutMoneyProperty: "sort-out-money-property",
-    aidsAdaptationsReason: "aids-adaptations-reason",
-    aidsAdaptations: "aids-adaptations",
-    aidsAdaptationsDifficulty: "aids-adaptations-difficulty",
-    aidsAdaptationsAdded: "aids-adaptations-added",
-    aidsAdaptationsRemove: "aids-adaptations-remove",
 
     // contact details
     telephoneNumber: "telephone-number",
@@ -156,8 +64,6 @@ module.exports = {
     checkAnswersSpecialRules: "check-answers-special-rules",
 
     // claim submission
-    claimSubmission: "claim-submission",
-    sercoLateApplication: "serco-late-application",
     checkAnswersFullList: "check-answers-full-list",
     done: "done",
   },
