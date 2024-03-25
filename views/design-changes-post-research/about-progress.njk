@@ -1,0 +1,17 @@
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "layouts/prototypeLayout.njk" %}
+
+{% block form %}
+
+  <h1 class="govuk-heading-l">What you need to do</h1>
+  <p class="govuk-body">We will ask:</p>
+ 
+  <ul class="govuk-list govuk-list--bullet">
+    <li>about registering a death</li>
+    <li>whether you have arranged the funeral</li>
+    <li>about sorting out money, possessions and property</li>
+  </ul>
+
+{% endblock %}

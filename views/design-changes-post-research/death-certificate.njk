@@ -1,0 +1,40 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% extends "layouts/prototypeLayout.njk" %}
+
+{% block form %}
+  {{ govukRadios({
+    idPrefix: "death-certificate",
+    name: "death-certificate",
+    fieldset: {
+      legend: {
+        text: "What type of death certificate do you have?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    errorMessage: data.validation['death-certificate'].error,
+    items: [
+      {
+        value: "have-death-certificate",
+        text: "I have a death certificate",
+        checked: true if data["death-certificate"] and data["death-certificate"].includes("haveDeathCertificate")
+      },
+      {
+        value: "interim-death-certificate",
+        text: "I have an interim death certificate",
+        checked: true if data["death-certificate"] and data["death-certificate"].includes("interimDeathCertificate")
+      },
+      {
+        value: "different-type",
+        text: "I have a different type of certificate",
+        checked: true if data["death-certificate"] and data["death-certificate"].includes("differentType")
+      },
+      {
+        value: "not-sure",
+        text: "I am not sure",
+        checked: true if data["death-certificate"] and data["death-certificate"].includes("notSure")
+      }
+    ]
+  }) }}
+{% endblock %}

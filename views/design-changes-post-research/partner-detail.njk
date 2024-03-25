@@ -1,0 +1,51 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% extends "layouts/prototypeLayout.njk" %}
+
+{% block form %}
+
+
+  {{ govukRadios({
+    idPrefix: "partner-detail",
+    name: "partner-detail",
+    classes: "govuk-!-margin-bottom-4",
+    fieldset: {
+      legend: {
+        text: "When your partner died, were you:",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    errorMessage: data.validation['partner-detail'].error,
+    hint: {
+      html: specialRulesBody
+    },
+    items: [
+      {
+        value: "married",
+        text: "Married",
+        checked: true if data["partner-detail"] === "married"
+      },
+      {
+        value: "civil-partnership",
+        text: "In a civil partnership",
+        checked: true if data["partner-detail"] === "civil-partnership"
+      },
+      {
+        value: "living-together",
+        text: "Living together",
+        checked: true if data["partner-detail"] === "living-together"
+      },
+      {
+        divider: "or"
+      },
+      {
+
+        value: "none",
+        text: "None of these apply",
+        checked: true if data["partner-detail"] === "none"
+      }
+    ]
+  }) }}
+{% endblock %}
+
