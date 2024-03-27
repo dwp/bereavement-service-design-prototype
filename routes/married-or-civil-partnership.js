@@ -1,7 +1,7 @@
 const express = require("express");
 
 const router = express.Router();
-const controllers = require("../controllers/sprint-75");
+const controllers = require("../controllers/married-or-civil-partnership");
 const { urls } = require("../utils/constants");
 
 // start
