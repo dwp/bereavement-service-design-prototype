@@ -14,7 +14,7 @@ const config = {
       name: "cohabiting-situation",
       type: validation.checkboxes,
       errors: {
-        required: "Select what situation applies to you",
+        required: "Select what situation applies to you.",
       },
     },
   ],
